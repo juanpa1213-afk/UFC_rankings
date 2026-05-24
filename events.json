@@ -18,7 +18,8 @@
         "underdogName": null
       }
     ],
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 2,
@@ -39,7 +40,8 @@
         "underdogName": null
       }
     ],
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 3,
@@ -61,7 +63,8 @@
       }
     ],
     "isPending": false,
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 4,
@@ -82,7 +85,8 @@
         "underdogName": null
       }
     ],
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 5,
@@ -104,7 +108,8 @@
       }
     ],
     "isPending": false,
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 6,
@@ -126,7 +131,8 @@
       }
     ],
     "isPending": false,
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 7,
@@ -148,7 +154,8 @@
       }
     ],
     "isPending": false,
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 8,
@@ -170,7 +177,8 @@
       }
     ],
     "isPending": false,
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 9,
@@ -192,7 +200,8 @@
       }
     ],
     "isPending": false,
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 10,
@@ -213,7 +222,8 @@
         "underdogName": null
       }
     ],
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 11,
@@ -234,7 +244,8 @@
         "underdogName": null
       }
     ],
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 12,
@@ -255,7 +266,8 @@
         "underdogName": null
       }
     ],
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 13,
@@ -277,7 +289,8 @@
       }
     ],
     "isPending": false,
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 14,
@@ -316,7 +329,8 @@
         "fighter": "Zinpelin Duzzan",
         "pts": 15
       }
-    ]
+    ],
+    "bonuses": []
   },
   {
     "id": 15,
@@ -350,7 +364,8 @@
         "underdogName": null
       }
     ],
-    "penalties": []
+    "penalties": [],
+    "bonuses": []
   },
   {
     "id": 17,
@@ -384,7 +399,8 @@
         "bonus": 0,
         "underdogName": null
       }
-    ]
+    ],
+    "bonuses": []
   },
   {
     "id": 18,
@@ -406,7 +422,8 @@
         "bonus": 0,
         "underdogName": null
       }
-    ]
+    ],
+    "bonuses": []
   },
   {
     "id": 19,
@@ -440,7 +457,8 @@
         "bonus": 0,
         "underdogName": null
       }
-    ]
+    ],
+    "bonuses": []
   },
   {
     "id": 20,
@@ -462,7 +480,8 @@
         "bonus": 0,
         "underdogName": null
       }
-    ]
+    ],
+    "bonuses": []
   },
   {
     "id": 21,
@@ -501,25 +520,11 @@
         "bonus": 0,
         "underdogName": null
       }
-    ]
-  },
-  {
-    "id": 24,
-    "name": "UFC FIGHT NIGHT:",
-    "date": "4 MAY 2026",
-    "arena": "8 GOL",
-    "isPending": true,
-    "penalties": [],
-    "fights": [
+    ],
+    "bonuses": [
       {
-        "subtitle": "KYLIAN LI-TADOR vs Der Kaiser",
-        "f1": "KYLIAN LI-TADOR",
-        "f2": "Der Kaiser",
-        "winner": "KYLIAN LI-TADOR",
-        "method": "Decision",
-        "isDraw": false,
-        "isTitleBout": false,
-        "titleBoutName": ""
+        "fighter": "Albeiro Puvalgia",
+        "pts": 4
       }
     ]
   },
@@ -528,108 +533,71 @@
     "name": "UFC 18:",
     "date": "8 MAY 2026",
     "arena": "8 GOL",
-    "isPending": true,
+    "isPending": false,
     "penalties": [],
     "fights": [
       {
         "subtitle": "Jeffrey Epstein vs Juan Sevilla Vargas",
         "f1": "Jeffrey Epstein",
         "f2": "Juan Sevilla Vargas",
-        "winner": "Jeffrey Epstein",
+        "winner": "Juan Sevilla Vargas",
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": true,
-        "titleBoutName": "COACH OF THE COACH CHAMPIONSHIP BOUT"
-      },
-      {
-        "subtitle": "Michelo White vs Zinpelin Duzzan 2",
-        "f1": "Michelo White",
-        "f2": "Zinpelin Duzzan",
-        "winner": "Michelo White",
-        "method": "Decision",
-        "isDraw": false,
-        "isTitleBout": false,
-        "titleBoutName": ""
+        "titleBoutName": "COACH OF THE COACH CHAMPIONSHIP BOUT",
+        "bonus": 0,
+        "underdogName": null
       }
-    ]
-  },
-  {
-    "id": 26,
-    "name": "UFC FIGHT NIGHT:",
-    "date": "11 MAY 2026",
-    "arena": "8 GOL",
-    "isPending": true,
-    "penalties": [],
-    "fights": [
-      {
-        "subtitle": "JP 'MAKÉLÉLÉ' Álvarez vs German Joven",
-        "f1": "JP 'MAKÉLÉLÉ' Álvarez",
-        "f2": "German Joven",
-        "winner": "JP 'MAKÉLÉLÉ' Álvarez",
-        "method": "Decision",
-        "isDraw": false,
-        "isTitleBout": false,
-        "titleBoutName": ""
-      }
-    ]
+    ],
+    "bonuses": []
   },
   {
     "id": 27,
     "name": "UFC 19:",
     "date": "15 MAY 2026",
     "arena": "Arena Panenka",
-    "isPending": true,
+    "isPending": false,
     "penalties": [],
     "fights": [
       {
-        "subtitle": "Kevin Roldan vs GutiGamerPro777",
-        "f1": "Kevin Roldan",
+        "subtitle": "Michelo White vs GutiGamerPro777 2",
+        "f1": "Michelo White",
         "f2": "GutiGamerPro777",
-        "winner": "Kevin Roldan",
+        "winner": "Michelo White",
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": false,
-        "titleBoutName": ""
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
       },
       {
-        "subtitle": "JP 'Little Dick' Fajardo vs Nun-Kal Gym",
-        "f1": "JP 'Little Dick' Fajardo",
-        "f2": "Nun-Kal Gym",
-        "winner": "JP 'Little Dick' Fajardo",
+        "subtitle": "Nun-Kal Gym vs JP 'Little Dick' Fajardo 2",
+        "f1": "Nun-Kal Gym",
+        "f2": "JP 'Little Dick' Fajardo",
+        "winner": "Nun-Kal Gym",
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": false,
-        "titleBoutName": ""
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
       }
-    ]
-  },
-  {
-    "id": 28,
-    "name": "UFC FIGHT NIGHT:",
-    "date": "19 MAY 2026",
-    "arena": "Arena Panenka",
-    "isPending": true,
-    "penalties": [],
-    "fights": [
-      {
-        "subtitle": "Juan Sevilla Vargas vs Batman Dortmund",
-        "f1": "Juan Sevilla Vargas",
-        "f2": "Batman Dortmund",
-        "winner": "Juan Sevilla Vargas",
-        "method": "Decision",
-        "isDraw": false,
-        "isTitleBout": false,
-        "titleBoutName": ""
-      }
-    ]
+    ],
+    "bonuses": []
   },
   {
     "id": 29,
     "name": "UFC 20:",
     "date": "22 MAY 2026",
     "arena": "Arena Panenka",
-    "isPending": true,
-    "penalties": [],
+    "isPending": false,
+    "penalties": [
+      {
+        "fighter": "JAlvarez el 'Dueño del Sistema'",
+        "pts": 10
+      }
+    ],
     "fights": [
       {
         "subtitle": "Albeiro Puvalgia vs GutiGamerPro777",
@@ -639,19 +607,24 @@
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": false,
-        "titleBoutName": ""
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
       },
       {
-        "subtitle": "JP 'MAKÉLÉLÉ' Álvarez vs JAlvarez el 'Dueño del Sistema'",
-        "f1": "JP 'MAKÉLÉLÉ' Álvarez",
-        "f2": "JAlvarez el 'Dueño del Sistema'",
-        "winner": "JP 'MAKÉLÉLÉ' Álvarez",
+        "subtitle": "Der Kaiser vs Zinpelin Duzzan",
+        "f1": "Der Kaiser",
+        "f2": "Zinpelin Duzzan",
+        "winner": "Der Kaiser",
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": false,
-        "titleBoutName": ""
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
       }
-    ]
+    ],
+    "bonuses": []
   },
   {
     "id": 30,
@@ -671,6 +644,7 @@
         "isTitleBout": false,
         "titleBoutName": ""
       }
-    ]
+    ],
+    "bonuses": []
   }
 ]
