@@ -628,23 +628,58 @@
   },
   {
     "id": 30,
-    "name": "UFC FIGHT NIGHT:",
-    "date": "25 MAY 2026",
+    "name": "UFC 21:",
+    "date": "5 Jun 2026",
     "arena": "8 GOL",
-    "isPending": true,
+    "isPending": false,
     "penalties": [],
+    "bonuses": [],
     "fights": [
       {
-        "subtitle": "Michelo White vs GutiGamerPro777",
-        "f1": "Michelo White",
-        "f2": "GutiGamerPro777",
-        "winner": "Michelo White",
+        "subtitle": "Kevin Roldan vs KYLIAN LI-TADOR",
+        "f1": "Kevin Roldan",
+        "f2": "KYLIAN LI-TADOR",
+        "winner": "KYLIAN LI-TADOR",
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": false,
-        "titleBoutName": ""
+        "titleBoutName": "",
+        "bonus": 3,
+        "underdogName": "KYLIAN LI-TADOR"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "UFC 22:",
+    "date": "9 JUN 2026",
+    "arena": "8 GOL",
+    "isPending": false,
+    "penalties": [
+      {
+        "fighter": "Nun-Kal Gym",
+        "pts": 5
       }
     ],
-    "bonuses": []
+    "bonuses": [
+      {
+        "fighter": "GutiGamerPro777",
+        "pts": 5
+      }
+    ],
+    "fights": [
+      {
+        "subtitle": "Nun-Kal Gym vs GutiGamerPro777 2",
+        "f1": "Nun-Kal Gym",
+        "f2": "GutiGamerPro777",
+        "winner": "GutiGamerPro777",
+        "method": "KO",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 5,
+        "underdogName": "GutiGamerPro777"
+      }
+    ]
   }
 ]
