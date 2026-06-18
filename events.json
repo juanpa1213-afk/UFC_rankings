@@ -655,12 +655,7 @@
     "date": "9 JUN 2026",
     "arena": "8 GOL",
     "isPending": false,
-    "penalties": [
-      {
-        "fighter": "Nun-Kal Gym",
-        "pts": 5
-      }
-    ],
+    "penalties": [],
     "bonuses": [
       {
         "fighter": "GutiGamerPro777",
@@ -679,6 +674,52 @@
         "titleBoutName": "",
         "bonus": 5,
         "underdogName": "GutiGamerPro777"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "UFC 23:",
+    "date": "12 JUN 2026",
+    "arena": "Arena Panenka",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [],
+    "fights": [
+      {
+        "subtitle": "JP 'Little Dick' Fajardo vs German Joven 2",
+        "f1": "JP 'Little Dick' Fajardo",
+        "f2": "German Joven",
+        "winner": "JP 'Little Dick' Fajardo",
+        "method": "Split Decision",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 3,
+        "underdogName": "JP 'Little Dick' Fajardo"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "UFC 24:",
+    "date": "16 JUN 2026",
+    "arena": "8 GOL",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [],
+    "fights": [
+      {
+        "subtitle": "Kevin Roldan vs GutiGamerPro777",
+        "f1": "Kevin Roldan",
+        "f2": "GutiGamerPro777",
+        "winner": "Kevin Roldan",
+        "method": "KO",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
       }
     ]
   }
