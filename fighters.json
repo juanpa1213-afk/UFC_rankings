@@ -30,8 +30,8 @@
     "img": "german.png",
     "w": 4,
     "wko": 3,
-    "l": 2,
-    "lko": 1,
+    "l": 3,
+    "lko": 2,
     "d": 1,
     "wsplit": 1,
     "lsplit": 1,
@@ -135,8 +135,8 @@
     "img": "der-kaiser.png",
     "w": 3,
     "wko": 1,
-    "l": 1,
-    "lko": 1,
+    "l": 2,
+    "lko": 2,
     "d": 0,
     "wsplit": 1,
     "lsplit": 0,
@@ -159,14 +159,14 @@
   {
     "name": "Kevin Roldan",
     "img": "kevin.png",
-    "w": 2,
-    "wko": 2,
+    "w": 3,
+    "wko": 3,
     "l": 1,
     "lko": 0,
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 0,
+    "bonusPts": 4,
     "penaltyPts": 0
   },
   {
@@ -220,5 +220,18 @@
     "d": 0,
     "bonusPts": 0,
     "penaltyPts": 0
+  },
+  {
+    "name": "Manuel Turizo",
+    "w": 1,
+    "wko": 1,
+    "wsplit": 0,
+    "l": 0,
+    "lko": 0,
+    "lsplit": 0,
+    "d": 0,
+    "bonusPts": 0,
+    "penaltyPts": 0,
+    "img": "manuel_turizo.png"
   }
 ]

@@ -722,5 +722,51 @@
         "underdogName": null
       }
     ]
+  },
+  {
+    "id": 34,
+    "name": "UFC 25:",
+    "date": "20 JUN 26",
+    "arena": "Arena Panenka",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [],
+    "fights": [
+      {
+        "subtitle": "Der Kaiser vs Manuel Turizo",
+        "f1": "Der Kaiser",
+        "f2": "Manuel Turizo",
+        "winner": "Manuel Turizo",
+        "method": "KO",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "UFC 26:",
+    "date": "25 JUN 26",
+    "arena": "Arena Panenka",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [],
+    "fights": [
+      {
+        "subtitle": "Kevin Roldan vs German Joven",
+        "f1": "Kevin Roldan",
+        "f2": "German Joven",
+        "winner": "Kevin Roldan",
+        "method": "KO",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 4,
+        "underdogName": "Kevin Roldan"
+      }
+    ]
   }
 ]
