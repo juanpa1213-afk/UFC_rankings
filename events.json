@@ -768,5 +768,28 @@
         "underdogName": "Kevin Roldan"
       }
     ]
+  },
+  {
+    "id": 36,
+    "name": "UFC 27:",
+    "date": "17 JUL 2026",
+    "arena": "Arena Panenka",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [],
+    "fights": [
+      {
+        "subtitle": "Jeffrey Epstein vs JP 'Little Dick' Fajardo",
+        "f1": "Jeffrey Epstein",
+        "f2": "JP 'Little Dick' Fajardo",
+        "winner": "Jeffrey Epstein",
+        "method": "Decision",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
+      }
+    ]
   }
 ]
