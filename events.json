@@ -802,7 +802,7 @@
     "bonuses": [
       {
         "fighter": "Albeiro Puvalgia",
-        "pts": 500
+        "pts": 90
       }
     ],
     "fights": [
@@ -826,7 +826,12 @@
     "date": "27 jul 2026",
     "arena": "8 GOL",
     "isPending": false,
-    "penalties": [],
+    "penalties": [
+      {
+        "fighter": "JAlvarez el 'Dueño del Sistema'",
+        "pts": 10
+      }
+    ],
     "bonuses": [],
     "fights": [
       {
