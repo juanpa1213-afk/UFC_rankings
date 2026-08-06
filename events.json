@@ -791,5 +791,56 @@
         "underdogName": null
       }
     ]
+  },
+  {
+    "id": 37,
+    "name": "UFC 28:",
+    "date": "23 jul 2026",
+    "arena": "Wembley Stadium",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [
+      {
+        "fighter": "Albeiro Puvalgia",
+        "pts": 500
+      }
+    ],
+    "fights": [
+      {
+        "subtitle": "JP 'MAKÉLÉLÉ' Álvarez vs Batman Dortmund",
+        "f1": "JP 'MAKÉLÉLÉ' Álvarez",
+        "f2": "Batman Dortmund",
+        "winner": "Batman Dortmund",
+        "method": "Decision",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 2,
+        "underdogName": "Batman Dortmund"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "UFC 29:",
+    "date": "27 jul 2026",
+    "arena": "8 GOL",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [],
+    "fights": [
+      {
+        "subtitle": "GutiGamerPro777 vs JAlvarez el 'Dueño del Sistema'",
+        "f1": "GutiGamerPro777",
+        "f2": "JAlvarez el 'Dueño del Sistema'",
+        "winner": "JAlvarez el 'Dueño del Sistema'",
+        "method": "Decision",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
+      }
+    ]
   }
 ]

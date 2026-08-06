@@ -4,7 +4,7 @@
     "img": "jp_reus.png",
     "w": 3,
     "wko": 0,
-    "l": 0,
+    "l": 1,
     "lko": 0,
     "d": 0,
     "wsplit": 1,
@@ -74,7 +74,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 4,
+    "bonusPts": 504,
     "penaltyPts": 0
   },
   {
@@ -93,14 +93,14 @@
   {
     "name": "Batman Dortmund",
     "img": "batman-dortmund.png",
-    "w": 1,
+    "w": 2,
     "wko": 1,
     "l": 0,
     "lko": 0,
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 0,
+    "bonusPts": 2,
     "penaltyPts": 0
   },
   {
@@ -148,7 +148,7 @@
     "img": "gutigamerpro777.png",
     "w": 1,
     "wko": 1,
-    "l": 8,
+    "l": 9,
     "lko": 4,
     "d": 0,
     "wsplit": 0,
@@ -172,7 +172,7 @@
   {
     "name": "JAlvarez el 'Dueño del Sistema'",
     "img": "jalvarez.png",
-    "w": 3,
+    "w": 4,
     "wko": 1,
     "l": 2,
     "lko": 1,
