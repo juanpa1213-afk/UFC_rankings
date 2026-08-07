@@ -77,6 +77,7 @@ function migrateEvent(ev) {
     };
   }
   if (!base.penalties) base.penalties = [];
+  if (!base.bonuses)   base.bonuses   = [];
   return base;
 }
 function migrateEvents(arr) { return arr.map(migrateEvent); }
@@ -534,6 +535,11 @@ function buildAPBTab() {
         ${(ev.penalties||[]).map(p=>`<span class="apb-grid-penalty-tag">−${p.pts}pts ${p.fighter}</span>`).join('')}
       </div>` : '';
 
+    const bonHTML = (ev.bonuses||[]).length > 0 ? `
+      <div class="apb-grid-bonuses">
+        ${(ev.bonuses||[]).map(b=>`<span class="apb-grid-bonus-tag">+${b.pts}pts ${b.fighter}</span>`).join('')}
+      </div>` : '';
+
     card.innerHTML = `
       <div class="apb-grid-head">
         <div class="apb-grid-name">${fullTitle}${ev.isPending?'<span class="apb-pending-badge">Upcoming</span>':''}</div>
@@ -543,7 +549,8 @@ function buildAPBTab() {
         </div>
       </div>
       <div class="apb-grid-fights">${fightsHTML}</div>
-      ${penHTML}`;
+      ${penHTML}
+      ${bonHTML}`;
     container.appendChild(card);
   });
 }
@@ -622,6 +629,12 @@ function recalcAllRecords() {
         updateStat(pen.fighter, 'penaltyPts', pen.pts);
       }
     }
+
+    for (const bon of (ev.bonuses || [])) {
+      if (bon.fighter && bon.pts > 0) {
+        updateStat(bon.fighter, 'bonusPts', bon.pts);
+      }
+    }
   }
 }
 
@@ -676,6 +689,10 @@ function computeRankingSnapshot(upToIdx) {
 
     for (const pen of (ev.penalties || [])) {
       if (pen.fighter && pen.pts > 0) upd(pen.fighter, 'penaltyPts', pen.pts);
+    }
+
+    for (const bon of (ev.bonuses || [])) {
+      if (bon.fighter && bon.pts > 0) upd(bon.fighter, 'bonusPts', bon.pts);
     }
   }
 
@@ -775,6 +792,12 @@ function renderTimelineRanking(evIdx) {
       ${(ev.penalties||[]).map(p=>`<span class="tl-pen-tag">−${p.pts}pts ${p.fighter}</span>`).join('')}
     </div>` : '';
 
+  const bonHTML = (ev.bonuses||[]).length > 0 ? `
+    <div class="tl-event-bonuses">
+      <span class="tl-bon-label">Bonos aplicados:</span>
+      ${(ev.bonuses||[]).map(b=>`<span class="tl-bon-tag">+${b.pts}pts ${b.fighter}</span>`).join('')}
+    </div>` : '';
+
   let tableHTML = `<div class="tl-ranking-table">`;
   ranked.forEach((f, i) => {
     const rank    = i + 1;
@@ -818,6 +841,7 @@ function renderTimelineRanking(evIdx) {
     </div>
     <div class="tl-fight-summary">${fightsHTML}</div>
     ${penHTML}
+    ${bonHTML}
     ${tableHTML}
     ${notYetHTML}`;
 }
