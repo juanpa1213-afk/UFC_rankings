@@ -799,12 +799,7 @@
     "arena": "Wembley Stadium",
     "isPending": false,
     "penalties": [],
-    "bonuses": [
-      {
-        "fighter": "Albeiro Puvalgia",
-        "pts": 90
-      }
-    ],
+    "bonuses": [],
     "fights": [
       {
         "subtitle": "JP 'MAKÉLÉLÉ' Álvarez vs Batman Dortmund",
