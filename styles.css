@@ -82,6 +82,13 @@ main { position: relative; z-index: 1; max-width: 1600px; width: 100%; margin: 0
 .unranked-divider::before, .unranked-divider::after { content: ''; flex: 1; height: 1px; background: #222; }
 .unranked-divider span { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.35em; color: #333; white-space: nowrap; }
 
+/* ── SEASON FILTER ── */
+.ranking-season-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; justify-content: center; align-items: center; }
+.season-btn { font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); background: transparent; border: 1px solid #222; padding: 10px 16px; cursor: pointer; transition: all 0.25s ease; }
+.season-btn:hover { color: var(--gold-dim); border-color: var(--gold-dim); }
+.season-btn.active { color: var(--black); background: linear-gradient(135deg, var(--gold-bright), var(--gold)); border-color: var(--gold); }
+.ranking-empty { padding: 24px; text-align: center; font-family: 'Rajdhani', sans-serif; letter-spacing: 0.2em; color: #444; border: 1px dashed #222; background: rgba(255,255,255,0.02); }
+
 /* ── CARDS ── */
 .ranking-list { display: flex; flex-direction: column; gap: 10px; }
 .fighter-card {
@@ -139,7 +146,12 @@ main { position: relative; z-index: 1; max-width: 1600px; width: 100%; margin: 0
 .fighter-card:hover .fighter-avatar,
 .fighter-card.is-open .fighter-avatar { border-color: var(--gold); }
 .fighter-text { display: flex; flex-direction: column; min-width: 0; }
+.fighter-name-row { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .fighter-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.1rem, 3.5vw, 2rem); letter-spacing: 0.06em; line-height: 1; color: var(--white); transition: color 0.3s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.season-champion-crown { font-size: 1rem; line-height: 1; filter: drop-shadow(0 0 3px rgba(200,168,75,0.4)); }
+.season-champion-crown.gold { color: var(--gold); }
+.season-champion-crown.silver { color: #c0c0c0; filter: drop-shadow(0 0 3px rgba(192,192,192,0.35)); }
+.season-champion-crown.bronze { color: #cd7f32; filter: drop-shadow(0 0 3px rgba(205,127,50,0.35)); }
 .fighter-card:hover .fighter-name, .fighter-card.is-open .fighter-name { color: var(--gold-bright); }
 
 .fighter-record { margin-top: 4px; font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; color: var(--grey); display: flex; gap: 3px; align-items: center; white-space: nowrap; flex-wrap: nowrap; }

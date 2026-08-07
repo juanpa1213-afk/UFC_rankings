@@ -10,6 +10,7 @@
 let fighters   = [];
 let APB_EVENTS = [];
 let openCard   = null;
+let rankingSeason = 'all';
 
 // Mapa nombre_archivo → dataURL (base64)
 const imageCache = {};
@@ -259,10 +260,10 @@ function calcBonusForFight(ft, scoresBefore) {
   return { bonus: brechaBonus + contundenciaBonus, underdogName: undName };
 }
 
-function getTitleBoutStats(fighterName) {
+function getTitleBoutStats(fighterName, events = APB_EVENTS) {
   const norm = normName(fighterName);
   let total = 0, wins = 0, losses = 0, draws = 0;
-  for (const ev of APB_EVENTS) {
+  for (const ev of events) {
     if (ev.isPending) continue;
     for (const ft of ev.fights) {
       if (!ft.isTitleBout) continue;
@@ -304,32 +305,97 @@ function suggestEventName() {
   return match ? `${match[1]}${parseInt(match[2]) + 1}${match[3]}` : '';
 }
 
+function getEventSeasonNumber(ev) {
+  const id = Number(ev?.id);
+  if (!Number.isFinite(id) || id <= 0) return 1;
+  return id <= 38 ? 1 : 2;
+}
+
+function getSeasonEvents(seasonKey = rankingSeason) {
+  const realEvents = APB_EVENTS.filter(ev => !ev.isPending);
+  if (seasonKey === 'all') return realEvents;
+  const seasonNumber = Number(seasonKey);
+  return realEvents.filter(ev => getEventSeasonNumber(ev) === seasonNumber);
+}
+
+function getSeasonTopThreeNames(seasonEvents = null, seasonKey = rankingSeason) {
+  const result = { champions: [], runnersUp: [], thirds: [] };
+
+  if (seasonKey === 'all') {
+    [1, 2].forEach(seasonNumber => {
+      const events = getSeasonEvents(String(seasonNumber));
+      if (!events.length) return;
+      const snap = computeRankingSnapshotFromEvents(events);
+      const ranked = sortSnapshot(snap);
+      const [first, second, third] = ranked;
+      if (first) result.champions.push(normName(first.name));
+      if (second) result.runnersUp.push(normName(second.name));
+      if (third) result.thirds.push(normName(third.name));
+    });
+    return result;
+  }
+
+  const events = seasonEvents || getSeasonEvents(String(seasonKey));
+  if (!events.length) return result;
+
+  const snap = computeRankingSnapshotFromEvents(events);
+  const ranked = sortSnapshot(snap);
+  const [first, second, third] = ranked;
+  if (first) result.champions.push(normName(first.name));
+  if (second) result.runnersUp.push(normName(second.name));
+  if (third) result.thirds.push(normName(third.name));
+  return result;
+}
+
+function renderRankingSeasonNav() {
+  const nav = document.getElementById('rankingSeasonNav');
+  if (!nav) return;
+  const options = [
+    { key: 'all', label: 'General' },
+    { key: '1', label: 'Temporada 1' },
+    { key: '2', label: 'Temporada 2' },
+  ];
+  nav.innerHTML = options.map(({ key, label }) => `<button class="season-btn ${rankingSeason === key ? 'active' : ''}" data-season="${key}">${label}</button>`).join('');
+  nav.querySelectorAll('.season-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      rankingSeason = btn.dataset.season;
+      renderRankingSeasonNav();
+      buildRankingTab();
+    });
+  });
+}
+
 // ─────────────────────────────────────────
 //  TAB: RANKING
 // ─────────────────────────────────────────
 function buildRankingTab() {
-  const ranked   = fighters.filter(f => f.w + f.l + f.d > 0);
-  const unranked = fighters.filter(f => f.w + f.l + f.d === 0);
-  ranked.sort((a, b) => {
-    const d = calcScore(b) - calcScore(a); if (d !== 0) return d;
-    const tf = (b.w+b.l+b.d) - (a.w+a.l+a.d); if (tf !== 0) return tf;
-    const tw = b.w - a.w; if (tw !== 0) return tw;
-    const ko = b.wko - a.wko; if (ko !== 0) return ko;
-    const wd = (b.w-b.wko-(b.wsplit||0)) - (a.w-a.wko-(a.wsplit||0)); if (wd !== 0) return wd;
-    const ws = (b.wsplit||0) - (a.wsplit||0); if (ws !== 0) return ws;
-    return a.l - b.l;
-  });
+  const seasonEvents = getSeasonEvents();
+  const snap = computeRankingSnapshotFromEvents(seasonEvents);
+  const ranked = sortSnapshot(snap);
+  const unranked = snap.filter(f => f.w + f.l + f.d === 0);
+  const seasonTopThree = getSeasonTopThreeNames(seasonEvents, rankingSeason);
   const list = document.getElementById('rankingList');
   list.innerHTML = ''; openCard = null;
-  ranked.forEach((f, i) => list.appendChild(buildCard(f, i + 1, false, 0.05 * i + 0.3)));
+
+  if (!seasonEvents.length) {
+    const empty = document.createElement('div');
+    empty.className = 'ranking-empty';
+    empty.textContent = 'No hay eventos disputados en esta temporada todavía.';
+    list.appendChild(empty);
+    renderRankingSeasonNav();
+    return;
+  }
+
+  ranked.forEach((f, i) => list.appendChild(buildCard(f, i + 1, false, 0.05 * i + 0.3, seasonEvents, seasonTopThree)));
   if (unranked.length) {
     const div = document.createElement('div'); div.className = 'unranked-divider'; div.innerHTML = '<span>Not ranked</span>'; list.appendChild(div);
-    unranked.forEach((f, i) => list.appendChild(buildCard(f, null, true, 0.05 * (ranked.length + i) + 0.3)));
+    unranked.forEach((f, i) => list.appendChild(buildCard(f, null, true, 0.05 * (ranked.length + i) + 0.3, seasonEvents, seasonTopThree)));
   }
-  injectHistories();
+  renderRankingSeasonNav();
+  injectHistories(seasonEvents);
 }
 
-function buildCard(f, rankNum, isUnranked, animDelay) {
+function buildCard(f, rankNum, isUnranked, animDelay, seasonEvents = APB_EVENTS, seasonTopThree = { champions: [], runnersUp: [], thirds: [] }) {
   const card   = document.createElement('div');
   card.className = 'fighter-card' + (isUnranked ? ' unranked' : '');
   const cardId = 'fighter-' + f.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -338,14 +404,23 @@ function buildCard(f, rankNum, isUnranked, animDelay) {
   card.style.animationDelay = `${animDelay}s`;
 
   const champBadge  = (!isUnranked && rankNum === 1) ? `<span class="champ-badge">CHAMP</span>` : '';
+  const nameNorm = normName(f.name);
+  const hasChampion = seasonTopThree.champions.includes(nameNorm);
+  const hasRunnerUp = seasonTopThree.runnersUp.includes(nameNorm);
+  const hasThird = seasonTopThree.thirds.includes(nameNorm);
+  const medalIcons = [];
+  if (hasChampion) medalIcons.push(`<span class="season-champion-crown gold" title="Campeón de temporada">👑</span>`);
+  if (hasRunnerUp) medalIcons.push(`<span class="season-champion-crown silver" title="Subcampeón de temporada">🥈</span>`);
+  if (hasThird) medalIcons.push(`<span class="season-champion-crown bronze" title="Tercer puesto">🥉</span>`);
+  const crownHTML = medalIcons.length ? medalIcons.join('') : '';
   const pts         = calcScore(f);
   const ptsDisplay  = pts > 0 ? `+${pts}` : `${pts}`;
   const ws = f.wsplit||0, ls = f.lsplit||0;
   const wNormal = f.w - f.wko - ws, lNormal = f.l - f.lko - ls;
 
-  const tb = getTitleBoutStats(f.name);
+  const tb = getTitleBoutStats(f.name, seasonEvents);
   const tbFights = [];
-  for (const ev of APB_EVENTS) {
+  for (const ev of seasonEvents) {
     if (ev.isPending) continue;
     for (const ft of ev.fights) {
       if (ft.isTitleBout && (normName(ft.f1)===normName(f.name)||normName(ft.f2)===normName(f.name))) tbFights.push({ev,ft});
@@ -385,7 +460,10 @@ function buildCard(f, rankNum, isUnranked, animDelay) {
       <div class="fighter-info">
         ${avatarHTML}
         <div class="fighter-text">
-        <div class="fighter-name">${f.name}</div>
+        <div class="fighter-name-row">
+          <div class="fighter-name">${f.name}</div>
+          ${crownHTML}
+        </div>
         <div class="fighter-record">
           <span class="rec-win">${f.w} W</span><span class="rec-sep">—</span>
           <span class="rec-loss">${f.l} L</span><span class="rec-sep">—</span>
@@ -430,9 +508,9 @@ function buildCard(f, rankNum, isUnranked, animDelay) {
 // ─────────────────────────────────────────
 //  HISTORIAL DE PELEADORES
 // ─────────────────────────────────────────
-function getFighterHistory(fighterName) {
+function getFighterHistory(fighterName, events = APB_EVENTS) {
   const norm = normName(fighterName), rows = [];
-  for (const ev of APB_EVENTS) {
+  for (const ev of events) {
     if (ev.isPending) continue;
     for (const ft of ev.fights) {
       if (normName(ft.f1)!==norm && normName(ft.f2)!==norm) continue;
@@ -446,8 +524,8 @@ function getFighterHistory(fighterName) {
   return rows;
 }
 
-function buildHistoryHTML(fighterName) {
-  const history = getFighterHistory(fighterName);
+function buildHistoryHTML(fighterName, events = APB_EVENTS) {
+  const history = getFighterHistory(fighterName, events);
   let html = `<div class="apb-history"><div class="apb-history-title">UFC Fight History</div>`;
   if (!history.length) { html += `<div class="apb-history-empty">No fights on record</div>`; }
   else for (const h of history) {
@@ -470,12 +548,12 @@ function buildHistoryHTML(fighterName) {
   return html + '</div>';
 }
 
-function injectHistories() {
+function injectHistories(events = APB_EVENTS) {
   document.querySelectorAll('.fighter-card').forEach(card => {
     const nameEl = card.querySelector('.fighter-name'), detail = card.querySelector('.card-detail');
     if (!nameEl || !detail) return;
     const div = document.createElement('div');
-    div.innerHTML = buildHistoryHTML(nameEl.textContent.trim());
+    div.innerHTML = buildHistoryHTML(nameEl.textContent.trim(), events);
     detail.appendChild(div.firstElementChild);
   });
 }
@@ -643,9 +721,10 @@ function recalcAllRecords() {
 // ─────────────────────────────────────────
 let tlCurrentIdx = -1;
 
-function computeRankingSnapshot(upToIdx) {
+function computeRankingSnapshotFromEvents(events) {
   const snap = fighters.map(f => ({
     name: f.name,
+    img: f.img,
     w:0, wko:0, wsplit:0, l:0, lko:0, lsplit:0,
     d:0, bonusPts:0, penaltyPts:0
   }));
@@ -657,8 +736,7 @@ function computeRankingSnapshot(upToIdx) {
 
   const foughtBefore = new Set();
 
-  for (let i = 0; i <= upToIdx; i++) {
-    const ev = APB_EVENTS[i];
+  for (const ev of events) {
     if (!ev || ev.isPending) continue;
 
     for (const ft of ev.fights) {
@@ -697,6 +775,10 @@ function computeRankingSnapshot(upToIdx) {
   }
 
   return snap;
+}
+
+function computeRankingSnapshot(upToIdx) {
+  return computeRankingSnapshotFromEvents(APB_EVENTS.slice(0, upToIdx + 1));
 }
 
 function sortSnapshot(snap) {
