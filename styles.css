@@ -175,6 +175,9 @@ main { position: relative; z-index: 1; max-width: 1600px; width: 100%; margin: 0
 .detail-sep { grid-column: 1 / -1; height: 1px; background: #1e1e1e; }
 
 .champ-badge { position: absolute; top: 8px; right: 15px; font-family: 'Rajdhani', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; color: var(--black); background: var(--gold); padding: 3px 8px; text-transform: uppercase; z-index: 2; }
+.retired-badge { position: absolute; top: 8px; left: 15px; font-family: 'Rajdhani', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; color: #999; background: #262626; border: 1px solid #3a3a3a; padding: 3px 8px; text-transform: uppercase; z-index: 2; }
+.fighter-card.is-retired .fighter-name { color: #999; }
+.fighter-card.is-retired .rank { opacity: 0.6; }
 
 footer { position: relative; z-index: 1; text-align: center; padding: 30px; border-top: 1px solid #1a1a1a; font-family: 'Rajdhani', sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; color: #2a2a2a; text-transform: uppercase; }
 

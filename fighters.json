@@ -193,7 +193,8 @@
     "wsplit": 0,
     "lsplit": 0,
     "bonusPts": 0,
-    "penaltyPts": 0
+    "penaltyPts": 0,
+    "retired": true
   },
   {
     "name": "Super Raul",
@@ -206,7 +207,8 @@
     "wsplit": 0,
     "lsplit": 0,
     "bonusPts": 0,
-    "penaltyPts": 0
+    "penaltyPts": 0,
+    "retired": true
   },
   {
     "name": "Juan Sevilla Vargas",

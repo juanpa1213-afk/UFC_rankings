@@ -372,38 +372,62 @@ function buildRankingTab() {
   const seasonEvents = getSeasonEvents();
   const snap = computeRankingSnapshotFromEvents(seasonEvents);
   const ranked = sortSnapshot(snap);
-  const unranked = snap.filter(f => f.w + f.l + f.d === 0);
+  // "Not ranked" solo tiene sentido en la vista General: ahí se listan los
+  // peleadores que nunca han peleado. En las pestañas de temporada, un
+  // peleador que simplemente no participó esa temporada no debe aparecer
+  // (ni ranked ni "Not ranked"). Los retirados nunca entran en esta lista.
+  const unranked = rankingSeason === 'all'
+    ? snap.filter(f => f.w + f.l + f.d === 0 && !f.retired)
+    : [];
   const seasonTopThree = getSeasonTopThreeNames(seasonEvents, rankingSeason);
   const list = document.getElementById('rankingList');
   list.innerHTML = ''; openCard = null;
 
+  const showRetiredBadge = rankingSeason === 'all';
+
   if (!seasonEvents.length) {
-    const empty = document.createElement('div');
-    empty.className = 'ranking-empty';
-    empty.textContent = 'No hay eventos disputados en esta temporada todavía.';
-    list.appendChild(empty);
+    // Todavía no se ha disputado ningún evento en esta temporada: en vez de
+    // ocultar la tabla, mostramos el roster completo (sin retirados) en
+    // 0-0-0, listo para cuando empiecen a pelear.
+    const roster = fighters
+      .filter(f => !f.retired)
+      .map(f => ({
+        name: f.name, img: f.img, retired: !!f.retired,
+        w:0, wko:0, wsplit:0, l:0, lko:0, lsplit:0, d:0, bonusPts:0, penaltyPts:0
+      }));
+    if (!roster.length) {
+      const empty = document.createElement('div');
+      empty.className = 'ranking-empty';
+      empty.textContent = 'No hay eventos disputados en esta temporada todavía.';
+      list.appendChild(empty);
+      renderRankingSeasonNav();
+      return;
+    }
+    roster.forEach((f, i) => list.appendChild(buildCard(f, null, true, 0.05 * i + 0.3, seasonEvents, seasonTopThree, showRetiredBadge)));
     renderRankingSeasonNav();
     return;
   }
 
-  ranked.forEach((f, i) => list.appendChild(buildCard(f, i + 1, false, 0.05 * i + 0.3, seasonEvents, seasonTopThree)));
+  ranked.forEach((f, i) => list.appendChild(buildCard(f, i + 1, false, 0.05 * i + 0.3, seasonEvents, seasonTopThree, showRetiredBadge)));
   if (unranked.length) {
     const div = document.createElement('div'); div.className = 'unranked-divider'; div.innerHTML = '<span>Not ranked</span>'; list.appendChild(div);
-    unranked.forEach((f, i) => list.appendChild(buildCard(f, null, true, 0.05 * (ranked.length + i) + 0.3, seasonEvents, seasonTopThree)));
+    unranked.forEach((f, i) => list.appendChild(buildCard(f, null, true, 0.05 * (ranked.length + i) + 0.3, seasonEvents, seasonTopThree, showRetiredBadge)));
   }
   renderRankingSeasonNav();
   injectHistories(seasonEvents);
 }
 
-function buildCard(f, rankNum, isUnranked, animDelay, seasonEvents = APB_EVENTS, seasonTopThree = { champions: [], runnersUp: [], thirds: [] }) {
+function buildCard(f, rankNum, isUnranked, animDelay, seasonEvents = APB_EVENTS, seasonTopThree = { champions: [], runnersUp: [], thirds: [] }, showRetiredBadge = false) {
   const card   = document.createElement('div');
-  card.className = 'fighter-card' + (isUnranked ? ' unranked' : '');
+  const isRetired = !!f.retired;
+  card.className = 'fighter-card' + (isUnranked ? ' unranked' : '') + (isRetired ? ' is-retired' : '');
   const cardId = 'fighter-' + f.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   card.id = cardId;
   if (!isUnranked) { if (rankNum===1) card.classList.add('top-1'); else if (rankNum===2) card.classList.add('top-2'); else if (rankNum===3) card.classList.add('top-3'); }
   card.style.animationDelay = `${animDelay}s`;
 
   const champBadge  = (!isUnranked && rankNum === 1) ? `<span class="champ-badge">CHAMP</span>` : '';
+  const retiredBadge = (showRetiredBadge && isRetired) ? `<span class="retired-badge">RETIRED</span>` : '';
   const nameNorm = normName(f.name);
   const hasChampion = seasonTopThree.champions.includes(nameNorm);
   const hasRunnerUp = seasonTopThree.runnersUp.includes(nameNorm);
@@ -455,6 +479,7 @@ function buildCard(f, rankNum, isUnranked, animDelay, seasonEvents = APB_EVENTS,
 
   card.innerHTML = `
     ${champBadge}
+    ${retiredBadge}
     <div class="card-main">
       <div class="rank">${isUnranked?'—':rankNum}</div>
       <div class="fighter-info">
@@ -725,6 +750,7 @@ function computeRankingSnapshotFromEvents(events) {
   const snap = fighters.map(f => ({
     name: f.name,
     img: f.img,
+    retired: !!f.retired,
     w:0, wko:0, wsplit:0, l:0, lko:0, lsplit:0,
     d:0, bonusPts:0, penaltyPts:0
   }));
