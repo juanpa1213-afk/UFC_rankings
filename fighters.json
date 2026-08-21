@@ -9,7 +9,7 @@
     "d": 0,
     "wsplit": 1,
     "lsplit": 0,
-    "bonusPts": 0,
+    "bonusPts": 1,
     "penaltyPts": 0
   },
   {
@@ -22,7 +22,7 @@
     "d": 2,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 0,
+    "bonusPts": 1,
     "penaltyPts": 0
   },
   {
@@ -30,8 +30,8 @@
     "img": "german.png",
     "w": 4,
     "wko": 3,
-    "l": 3,
-    "lko": 2,
+    "l": 4,
+    "lko": 3,
     "d": 1,
     "wsplit": 1,
     "lsplit": 1,
@@ -74,7 +74,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 4,
+    "bonusPts": 5,
     "penaltyPts": 0
   },
   {
@@ -100,20 +100,20 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 2,
+    "bonusPts": 3,
     "penaltyPts": 0
   },
   {
     "name": "Zinpelin Duzzan",
     "img": "zinpelin.png",
-    "w": 1,
-    "wko": 1,
+    "w": 2,
+    "wko": 2,
     "l": 3,
     "lko": 2,
     "d": 1,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 0,
+    "bonusPts": 5,
     "penalties": 0,
     "penaltyPts": 15
   },
@@ -179,7 +179,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 1,
-    "bonusPts": 0,
+    "bonusPts": 1,
     "penaltyPts": 20
   },
   {

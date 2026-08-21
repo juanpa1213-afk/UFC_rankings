@@ -842,5 +842,49 @@
         "underdogName": null
       }
     ]
+  },
+  {
+    "id": 39,
+    "name": "UFC 30:",
+    "date": "14 mar 2026",
+    "arena": "Arena Panenka",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [
+      {
+        "fighter": "JP 'MAKÉLÉLÉ' Álvarez",
+        "pts": 1
+      },
+      {
+        "fighter": "Nun-Kal Gym",
+        "pts": 1
+      },
+      {
+        "fighter": "Albeiro Puvalgia",
+        "pts": 1
+      },
+      {
+        "fighter": "Batman Dortmund",
+        "pts": 1
+      },
+      {
+        "fighter": "JAlvarez el 'Dueño del Sistema'",
+        "pts": 1
+      }
+    ],
+    "fights": [
+      {
+        "subtitle": "German Joven vs Zinpelin Duzzan 2",
+        "f1": "German Joven",
+        "f2": "Zinpelin Duzzan",
+        "winner": "Zinpelin Duzzan",
+        "method": "KO",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 5,
+        "underdogName": "Zinpelin Duzzan"
+      }
+    ]
   }
 ]
