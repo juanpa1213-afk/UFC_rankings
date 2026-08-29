@@ -886,5 +886,82 @@
         "underdogName": "Zinpelin Duzzan"
       }
     ]
+  },
+  {
+    "id": 40,
+    "name": "UFC 31:",
+    "date": "27 AGO 2026",
+    "arena": "Clareto Stadium",
+    "isPending": false,
+    "penalties": [
+      {
+        "fighter": "Zinpelin Duzzan",
+        "pts": 10
+      },
+      {
+        "fighter": "Jeffrey Epstein",
+        "pts": 10
+      },
+      {
+        "fighter": "German Joven",
+        "pts": 10
+      }
+    ],
+    "bonuses": [
+      {
+        "fighter": "JP 'MAKÉLÉLÉ' Álvarez",
+        "pts": 4
+      },
+      {
+        "fighter": "German Joven",
+        "pts": 1
+      },
+      {
+        "fighter": "JP 'Little Dick' Fajardo",
+        "pts": 1
+      },
+      {
+        "fighter": "KYLIAN LI-TADOR",
+        "pts": 3
+      },
+      {
+        "fighter": "Michelo White",
+        "pts": 3
+      },
+      {
+        "fighter": "Batman Dortmund",
+        "pts": 3
+      },
+      {
+        "fighter": "Der Kaiser",
+        "pts": 4
+      },
+      {
+        "fighter": "GutiGamerPro777",
+        "pts": 3
+      },
+      {
+        "fighter": "Doctor Autista",
+        "pts": 3
+      },
+      {
+        "fighter": "Albeiro Puvalgia",
+        "pts": 1
+      }
+    ],
+    "fights": [
+      {
+        "subtitle": "Nun-Kal Gym vs Doctor Autista",
+        "f1": "Nun-Kal Gym",
+        "f2": "Doctor Autista",
+        "winner": "Doctor Autista",
+        "method": "KO",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
+      }
+    ]
   }
 ]

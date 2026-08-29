@@ -9,7 +9,7 @@
     "d": 0,
     "wsplit": 1,
     "lsplit": 0,
-    "bonusPts": 1,
+    "bonusPts": 5,
     "penaltyPts": 0
   },
   {
@@ -17,8 +17,8 @@
     "img": "nun-kal.png",
     "w": 4,
     "wko": 2,
-    "l": 1,
-    "lko": 1,
+    "l": 2,
+    "lko": 2,
     "d": 2,
     "wsplit": 0,
     "lsplit": 0,
@@ -35,8 +35,8 @@
     "d": 1,
     "wsplit": 1,
     "lsplit": 1,
-    "bonusPts": 0,
-    "penaltyPts": 0
+    "bonusPts": 1,
+    "penaltyPts": 10
   },
   {
     "name": "JP 'Little Dick' Fajardo",
@@ -48,7 +48,7 @@
     "d": 0,
     "wsplit": 2,
     "lsplit": 0,
-    "bonusPts": 3,
+    "bonusPts": 4,
     "penaltyPts": 0
   },
   {
@@ -61,7 +61,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 3,
+    "bonusPts": 6,
     "penaltyPts": 0
   },
   {
@@ -74,7 +74,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 5,
+    "bonusPts": 6,
     "penaltyPts": 0
   },
   {
@@ -87,7 +87,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 1,
-    "bonusPts": 5,
+    "bonusPts": 8,
     "penaltyPts": 0
   },
   {
@@ -100,7 +100,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 3,
+    "bonusPts": 6,
     "penaltyPts": 0
   },
   {
@@ -115,7 +115,7 @@
     "lsplit": 0,
     "bonusPts": 5,
     "penalties": 0,
-    "penaltyPts": 15
+    "penaltyPts": 25
   },
   {
     "name": "Jeffrey Epstein",
@@ -128,7 +128,7 @@
     "wsplit": 0,
     "lsplit": 0,
     "bonusPts": 0,
-    "penaltyPts": 10
+    "penaltyPts": 20
   },
   {
     "name": "Der Kaiser",
@@ -140,7 +140,7 @@
     "d": 0,
     "wsplit": 1,
     "lsplit": 0,
-    "bonusPts": 0,
+    "bonusPts": 4,
     "penaltyPts": 0
   },
   {
@@ -153,7 +153,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 1,
-    "bonusPts": 10,
+    "bonusPts": 13,
     "penaltyPts": 0
   },
   {
@@ -235,5 +235,18 @@
     "bonusPts": 0,
     "penaltyPts": 0,
     "img": "manuel_turizo.png"
+  },
+  {
+    "name": "Doctor Autista",
+    "w": 1,
+    "wko": 1,
+    "wsplit": 0,
+    "l": 0,
+    "lko": 0,
+    "lsplit": 0,
+    "d": 0,
+    "bonusPts": 3,
+    "penaltyPts": 0,
+    "img": "doctor_autista.png"
   }
 ]
