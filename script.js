@@ -372,15 +372,12 @@ function buildRankingTab() {
   const seasonEvents = getSeasonEvents();
   const snap = computeRankingSnapshotFromEvents(seasonEvents);
   const ranked = sortSnapshot(snap);
-  // "Not ranked" en la vista General lista a los peleadores que nunca han
-  // peleado. En las pestañas de temporada, un peleador que simplemente no
-  // participó esa temporada no debe aparecer — salvo que haya recibido un
-  // bono o penalización en esa temporada (p.ej. un bono manual de evento
-  // sin pelea propia): en ese caso sí debe verse, para que sus puntos de
-  // bonificación no queden invisibles. Los retirados nunca entran aquí.
-  const unranked = rankingSeason === 'all'
-    ? snap.filter(f => f.w + f.l + f.d === 0 && !f.retired)
-    : snap.filter(f => f.w + f.l + f.d === 0 && !f.retired && ((f.bonusPts || 0) !== 0 || (f.penaltyPts || 0) !== 0));
+  // "Not ranked" lista a los peleadores que no tienen ninguna pelea NI
+  // ningún punto de bonificación/penalización en la temporada vista.
+  // Quien sí tiene puntos (por pelea o por bono manual) ya va en la lista
+  // normal, ordenado por puntaje como cualquier otro. Los retirados nunca
+  // entran en esta lista.
+  const unranked = snap.filter(f => f.w + f.l + f.d === 0 && !f.retired && (f.bonusPts || 0) === 0 && (f.penaltyPts || 0) === 0);
   const seasonTopThree = getSeasonTopThreeNames(seasonEvents, rankingSeason);
   const list = document.getElementById('rankingList');
   list.innerHTML = ''; openCard = null;
@@ -810,7 +807,11 @@ function computeRankingSnapshot(upToIdx) {
 }
 
 function sortSnapshot(snap) {
-  const ranked = snap.filter(f => f.w + f.l + f.d > 0);
+  // Un peleador entra al ranking si tiene peleas registradas, o si tiene
+  // puntos de bonificación/penalización aunque no haya peleado todavía
+  // (p.ej. un bono manual de evento). Solo va a "Not ranked" quien no
+  // tiene absolutamente ningún punto ni pelea.
+  const ranked = snap.filter(f => f.w + f.l + f.d > 0 || (f.bonusPts || 0) !== 0 || (f.penaltyPts || 0) !== 0);
   ranked.sort((a, b) => {
     const d = calcScore(b) - calcScore(a); if (d !== 0) return d;
     const tf = (b.w+b.l+b.d) - (a.w+a.l+a.d); if (tf !== 0) return tf;
