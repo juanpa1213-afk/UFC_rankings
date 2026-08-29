@@ -372,13 +372,15 @@ function buildRankingTab() {
   const seasonEvents = getSeasonEvents();
   const snap = computeRankingSnapshotFromEvents(seasonEvents);
   const ranked = sortSnapshot(snap);
-  // "Not ranked" solo tiene sentido en la vista General: ahí se listan los
-  // peleadores que nunca han peleado. En las pestañas de temporada, un
-  // peleador que simplemente no participó esa temporada no debe aparecer
-  // (ni ranked ni "Not ranked"). Los retirados nunca entran en esta lista.
+  // "Not ranked" en la vista General lista a los peleadores que nunca han
+  // peleado. En las pestañas de temporada, un peleador que simplemente no
+  // participó esa temporada no debe aparecer — salvo que haya recibido un
+  // bono o penalización en esa temporada (p.ej. un bono manual de evento
+  // sin pelea propia): en ese caso sí debe verse, para que sus puntos de
+  // bonificación no queden invisibles. Los retirados nunca entran aquí.
   const unranked = rankingSeason === 'all'
     ? snap.filter(f => f.w + f.l + f.d === 0 && !f.retired)
-    : [];
+    : snap.filter(f => f.w + f.l + f.d === 0 && !f.retired && ((f.bonusPts || 0) !== 0 || (f.penaltyPts || 0) !== 0));
   const seasonTopThree = getSeasonTopThreeNames(seasonEvents, rankingSeason);
   const list = document.getElementById('rankingList');
   list.innerHTML = ''; openCard = null;
