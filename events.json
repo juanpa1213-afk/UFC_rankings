@@ -889,7 +889,7 @@
   },
   {
     "id": 40,
-    "name": "UFC 31:",
+    "name": "UFC SPECIAL:",
     "date": "27 AGO 2026",
     "arena": "Clareto Stadium",
     "isPending": false,
@@ -955,6 +955,86 @@
         "f1": "Nun-Kal Gym",
         "f2": "Doctor Autista",
         "winner": "Doctor Autista",
+        "method": "KO",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "UFC 31:",
+    "date": "11 SEP 26",
+    "arena": "WEMBLEY",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [
+      {
+        "fighter": "Batman Dortmund",
+        "pts": 1
+      },
+      {
+        "fighter": "KYLIAN LI-TADOR",
+        "pts": 1
+      },
+      {
+        "fighter": "Zinpelin Duzzan",
+        "pts": 1
+      }
+    ],
+    "fights": [
+      {
+        "subtitle": "Doctor Autista vs Nun-Kal Gym 2",
+        "f1": "Doctor Autista",
+        "f2": "Nun-Kal Gym",
+        "winner": "Nun-Kal Gym",
+        "method": "KO",
+        "isDraw": false,
+        "isTitleBout": false,
+        "titleBoutName": "",
+        "bonus": 0,
+        "underdogName": null
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "UFC 32:",
+    "date": "18 SEP 26",
+    "arena": "Arena Panenka",
+    "isPending": false,
+    "penalties": [],
+    "bonuses": [
+      {
+        "fighter": "German Joven",
+        "pts": 1
+      },
+      {
+        "fighter": "Michelo White",
+        "pts": 1
+      },
+      {
+        "fighter": "GutiGamerPro777",
+        "pts": 1
+      },
+      {
+        "fighter": "Doctor Autista",
+        "pts": 1
+      },
+      {
+        "fighter": "Kevin Roldan",
+        "pts": 1
+      }
+    ],
+    "fights": [
+      {
+        "subtitle": "JP 'MAKÉLÉLÉ' Álvarez vs Albeiro Puvalgia",
+        "f1": "JP 'MAKÉLÉLÉ' Álvarez",
+        "f2": "Albeiro Puvalgia",
+        "winner": "JP 'MAKÉLÉLÉ' Álvarez",
         "method": "KO",
         "isDraw": false,
         "isTitleBout": false,

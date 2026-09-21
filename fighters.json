@@ -2,8 +2,8 @@
   {
     "name": "JP 'MAKÉLÉLÉ' Álvarez",
     "img": "jp_reus.png",
-    "w": 3,
-    "wko": 0,
+    "w": 4,
+    "wko": 1,
     "l": 1,
     "lko": 0,
     "d": 0,
@@ -15,8 +15,8 @@
   {
     "name": "Nun-Kal Gym",
     "img": "nun-kal.png",
-    "w": 4,
-    "wko": 2,
+    "w": 5,
+    "wko": 3,
     "l": 2,
     "lko": 2,
     "d": 2,
@@ -35,7 +35,7 @@
     "d": 1,
     "wsplit": 1,
     "lsplit": 1,
-    "bonusPts": 1,
+    "bonusPts": 2,
     "penaltyPts": 10
   },
   {
@@ -61,7 +61,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 6,
+    "bonusPts": 7,
     "penaltyPts": 0
   },
   {
@@ -69,8 +69,8 @@
     "img": "albeiro.png",
     "w": 1,
     "wko": 0,
-    "l": 5,
-    "lko": 3,
+    "l": 6,
+    "lko": 4,
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
@@ -87,7 +87,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 1,
-    "bonusPts": 8,
+    "bonusPts": 9,
     "penaltyPts": 0
   },
   {
@@ -100,7 +100,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 6,
+    "bonusPts": 7,
     "penaltyPts": 0
   },
   {
@@ -113,7 +113,7 @@
     "d": 1,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 5,
+    "bonusPts": 6,
     "penalties": 0,
     "penaltyPts": 25
   },
@@ -153,7 +153,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 1,
-    "bonusPts": 13,
+    "bonusPts": 14,
     "penaltyPts": 0
   },
   {
@@ -166,7 +166,7 @@
     "d": 0,
     "wsplit": 0,
     "lsplit": 0,
-    "bonusPts": 4,
+    "bonusPts": 5,
     "penaltyPts": 0
   },
   {
@@ -241,11 +241,11 @@
     "w": 1,
     "wko": 1,
     "wsplit": 0,
-    "l": 0,
-    "lko": 0,
+    "l": 1,
+    "lko": 1,
     "lsplit": 0,
     "d": 0,
-    "bonusPts": 3,
+    "bonusPts": 4,
     "penaltyPts": 0,
     "img": "doctor_autista.png"
   }
