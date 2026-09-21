@@ -96,7 +96,7 @@
     "fights": [
       {
         "subtitle": "Albeiro Puvalgia  vs JAlvarez el 'Dueño del Sistema'",
-        "f1": "Albeiro Puvalgia",
+        "f1": "Mr. President",
         "f2": "JAlvarez el 'Dueño del Sistema'",
         "winner": "JAlvarez el 'Dueño del Sistema'",
         "method": "KO",
@@ -120,8 +120,8 @@
       {
         "subtitle": "JP 'Little Dick' Fajardo vs JP 'MAKÉLÉLÉ' Álvarez 2",
         "f1": "JP 'Little Dick' Fajardo",
-        "f2": "JP 'MAKÉLÉLÉ' Álvarez",
-        "winner": "JP 'MAKÉLÉLÉ' Álvarez",
+        "f2": "Pablo Mussolini",
+        "winner": "Pablo Mussolini",
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": false,
@@ -165,7 +165,7 @@
     "fights": [
       {
         "subtitle": "Albeiro Puvalgia  vs JAlvarez el 'Dueño del Sistema' 2",
-        "f1": "Albeiro Puvalgia",
+        "f1": "Mr. President",
         "f2": "JAlvarez el 'Dueño del Sistema'",
         "winner": "JAlvarez el 'Dueño del Sistema'",
         "method": "Decision",
@@ -277,7 +277,7 @@
     "fights": [
       {
         "subtitle": "Albeiro Puvalgia vs Zinpelin Duzzan",
-        "f1": "Albeiro Puvalgia",
+        "f1": "Mr. President",
         "f2": "Zinpelin Duzzan",
         "winner": "Zinpelin Duzzan",
         "method": "KO",
@@ -342,8 +342,8 @@
       {
         "subtitle": "Juan Sevilla Vargas vs JP 'MAKÉLÉLÉ' Álvarez",
         "f1": "Juan Sevilla Vargas",
-        "f2": "JP 'MAKÉLÉLÉ' Álvarez",
-        "winner": "JP 'MAKÉLÉLÉ' Álvarez",
+        "f2": "Pablo Mussolini",
+        "winner": "Pablo Mussolini",
         "method": "Split Decision",
         "isDraw": false,
         "isTitleBout": true,
@@ -389,7 +389,7 @@
       },
       {
         "subtitle": "Albeiro Puvalgia vs Michelo White",
-        "f1": "Albeiro Puvalgia",
+        "f1": "Mr. President",
         "f2": "Michelo White",
         "winner": "Michelo White",
         "method": "KO",
@@ -498,9 +498,9 @@
     "fights": [
       {
         "subtitle": "JP 'MAKÉLÉLÉ' Álvarez vs JP 'Little Dick' Fajardo",
-        "f1": "JP 'MAKÉLÉLÉ' Álvarez",
+        "f1": "Pablo Mussolini",
         "f2": "JP 'Little Dick' Fajardo",
-        "winner": "JP 'MAKÉLÉLÉ' Álvarez",
+        "winner": "Pablo Mussolini",
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": true,
@@ -511,7 +511,7 @@
       {
         "subtitle": "JAlvarez el 'Dueño del Sistema' vs Albeiro Puvalgia 3",
         "f1": "JAlvarez el 'Dueño del Sistema'",
-        "f2": "Albeiro Puvalgia",
+        "f2": "Mr. President",
         "winner": "JAlvarez el 'Dueño del Sistema'",
         "method": "Decision",
         "isDraw": false,
@@ -523,7 +523,7 @@
     ],
     "bonuses": [
       {
-        "fighter": "Albeiro Puvalgia",
+        "fighter": "Mr. President",
         "pts": 4
       }
     ]
@@ -601,9 +601,9 @@
     "fights": [
       {
         "subtitle": "Albeiro Puvalgia vs GutiGamerPro777",
-        "f1": "Albeiro Puvalgia",
+        "f1": "Mr. President",
         "f2": "GutiGamerPro777",
-        "winner": "Albeiro Puvalgia",
+        "winner": "Mr. President",
         "method": "Decision",
         "isDraw": false,
         "isTitleBout": false,
@@ -803,7 +803,7 @@
     "fights": [
       {
         "subtitle": "JP 'MAKÉLÉLÉ' Álvarez vs Batman Dortmund",
-        "f1": "JP 'MAKÉLÉLÉ' Álvarez",
+        "f1": "Pablo Mussolini",
         "f2": "Batman Dortmund",
         "winner": "Batman Dortmund",
         "method": "Decision",
@@ -852,7 +852,7 @@
     "penalties": [],
     "bonuses": [
       {
-        "fighter": "JP 'MAKÉLÉLÉ' Álvarez",
+        "fighter": "Pablo Mussolini",
         "pts": 1
       },
       {
@@ -860,7 +860,7 @@
         "pts": 1
       },
       {
-        "fighter": "Albeiro Puvalgia",
+        "fighter": "Mr. President",
         "pts": 1
       },
       {
@@ -909,7 +909,7 @@
     ],
     "bonuses": [
       {
-        "fighter": "JP 'MAKÉLÉLÉ' Álvarez",
+        "fighter": "Pablo Mussolini",
         "pts": 4
       },
       {
@@ -945,7 +945,7 @@
         "pts": 3
       },
       {
-        "fighter": "Albeiro Puvalgia",
+        "fighter": "Mr. President",
         "pts": 1
       }
     ],
@@ -1032,9 +1032,9 @@
     "fights": [
       {
         "subtitle": "JP 'MAKÉLÉLÉ' Álvarez vs Albeiro Puvalgia",
-        "f1": "JP 'MAKÉLÉLÉ' Álvarez",
-        "f2": "Albeiro Puvalgia",
-        "winner": "JP 'MAKÉLÉLÉ' Álvarez",
+        "f1": "Pablo Mussolini",
+        "f2": "Mr. President",
+        "winner": "Pablo Mussolini",
         "method": "KO",
         "isDraw": false,
         "isTitleBout": false,
